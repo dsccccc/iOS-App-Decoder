@@ -23,10 +23,11 @@ class AppStore:
         response = requests.get(self.url, headers=self.HEADERS)
         assert response.status_code == 200
         soup = BeautifulSoup(response.text, from_encoding='utf-8', features="html.parser")
-        h1 = soup.find('h1').get_text()
+        h1 = soup.find('h1')
+        head = h1.get_text().replace(h1.find('span').get_text(), '').strip(' ')
         # for div in soup.find('div'):
         #     for _ in div.findAll('h2'):
         #         for info in div.find('dl').findAll('div'):
         #             if 'Price' in info.text:
         #                 price = info.text.replace('Price', '')
-        self.content = f'[{h1}]({self.url}) {free} {self.note}'
+        self.content = f'[{head}]({self.url}) {free} {self.note}'
