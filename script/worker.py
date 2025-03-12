@@ -4,7 +4,7 @@ def replacer(line: str, input_file: str = './tmp/README.md', output_file: str = 
     with open(input_file, 'r') as f:
         data = f.read()
     print(line)
-    data = data.rstrip('\n') + f"\n|{line[:emoji.emoji_list(b'\xf0\x9f\x86\x93'.decode('UTF-8'))[0]['match_start']]}|{b'\xf0\x9f\x86\x93'.decode('UTF-8')} {line[emoji.emoji_list(b'\xf0\x9f\x86\x93'.decode('UTF-8'))[0]['match_end']:]}|"
+    data = data.rstrip('\n') + f"\n|{line[:emoji.emoji_list(b'\xf0\x9f\x86\x93'.decode('UTF-8'))[0]['match_start']]}|{b'\xf0\x9f\x86\x93'.decode('UTF-8')}{line[emoji.emoji_list(b'\xf0\x9f\x86\x93'.decode('UTF-8'))[0]['match_end']:]}|"
     with open(output_file, 'w') as f:
         f.write(data)
 
