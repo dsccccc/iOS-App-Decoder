@@ -11,7 +11,7 @@ on:
       note:
         type: string
         description: Note for the app.
-        default: 'app'
+        default: 'in-app'
         # required: false
 
 jobs:
