@@ -10,5 +10,5 @@ if __name__ == '__main__':
     from src.decoder import AppStore
     app = AppStore()
     app.crawler()
-    requests.post('https://ntfy.sh/ios-app-free-for-a-limited-time', data=app.content.encode(encoding='utf-8'))
+    requests.post('https://ntfy.sh/ios-app-free-for-limited-time', data=app.content.encode(encoding='utf-8'))
     replacer(app.content, input_file='./README.md')
