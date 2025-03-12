@@ -1,4 +1,5 @@
 import emoji
+import requests
 
 free = b'\xf0\x9f\x86\x93'.decode('UTF-8')
 
