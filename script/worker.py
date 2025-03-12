@@ -11,4 +11,4 @@ if __name__ == '__main__':
     app = AppStore()
     app.crawler()
     requests.post('https://ntfy.sh/ios-app-free-for-a-limited-time', data=app.content.encode(encoding='utf-8'))
-    replacer(app.content)
+    replacer(app.content, input_file='./README.md')
