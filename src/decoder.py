@@ -27,4 +27,4 @@ class AppStore:
         #         for info in div.find('dl').findAll('div'):
         #             if 'Price' in info.text:
         #                 price = info.text.replace('Price', '')
-        self.content = f'[{h1}]({self.url}) 🆓{self.note}'
+        self.content = f'[{h1}]({self.url}) {b'\xf0\x9f\x86\x93'.decode('UTF-8')} {self.note}'
