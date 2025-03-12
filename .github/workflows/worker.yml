@@ -6,13 +6,13 @@ on:
       url:
         type: string
         description: Link for the app.
-        required: true
+        # required: true
 
       note:
         type: string
         description: Note for the app.
         default: 'app'
-        required: false
+        # required: false
 
 jobs:
   worker:
