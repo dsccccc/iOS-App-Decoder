@@ -1,7 +1,9 @@
+import emoji
+
 def replacer(line: str, input_file: str = './tmp/README.md', output_file: str = 'README.md'):
     with open(input_file, 'r') as f:
         data = f.read()
-    data = data.rstrip('\n') + f'\n|{line.split('🆓')[0]|🆓 {line.split('🆓')[1]|}'
+    data = data.rstrip('\n') + f'\n|{line[:emoji.emoji_list('🆓')[0]['match_start']]}|🆓{line[emoji.emoji_list('🆓')[0]['match_end']:]}|'
     with open(output_file, 'w') as f:
         f.write(data)
 
