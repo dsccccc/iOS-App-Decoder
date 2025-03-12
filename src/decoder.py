@@ -24,7 +24,7 @@ class AppStore:
         assert response.status_code == 200
         soup = BeautifulSoup(response.text, from_encoding='utf-8', features="html.parser")
         h1 = soup.find('h1')
-        head = h1.get_text().replace(h1.find('span').get_text(), '').strip(' ')
+        head = h1.get_text().replace(h1.find('span').get_text(), '').replace('\n', '').strip(' ')
         # for div in soup.find('div'):
         #     for _ in div.findAll('h2'):
         #         for info in div.find('dl').findAll('div'):
